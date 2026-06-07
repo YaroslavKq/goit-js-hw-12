@@ -11,7 +11,7 @@ import {
   hideLoadMoreButton,
 } from './js/render-functions.js';
 
-const searchFormElement = document.querySelector('.search-form');
+const searchFormElement = document.querySelector('.form');
 const loadMoreBtnElement = document.querySelector('.load-more-btn');
 
 let currentSearchWord = '';
