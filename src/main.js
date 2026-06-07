@@ -58,6 +58,12 @@ async function handleSearchSubmit(event) {
 
     if (data.totalHits > itemsPerPage) {
       showLoadMoreButton();
+    } else {
+      iziToast.info({
+        title: 'End of results',
+        message: "We're sorry, but you've reached the end of search results.",
+        position: 'topRight',
+      });
     }
   } catch (error) {
     iziToast.error({
@@ -80,6 +86,7 @@ async function handleLoadMoreRequest() {
     const data = await getImagesByQuery(currentSearchWord, currentActivePage);
 
     createGallery(data.hits);
+
     smoothPageScroll();
 
     const totalLoadedImages = currentActivePage * itemsPerPage;
